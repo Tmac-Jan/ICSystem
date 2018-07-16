@@ -1,33 +1,52 @@
 package com.zhbit.service;
 
-import com.zhbit.entity.News;
 import com.zhbit.entity.Notice;
-import com.zhbit.entity.PageBean;
+import com.zhbit.entity.base.DataGrid;
+import com.zhbit.entity.base.PageBean;
+import com.zhbit.entity.vo.VoNotice;
 
 import java.util.List;
 
 /**
  * Created by wby on 2018/5/28.
+ * modified by wenxuan
  */
-//¹«¸æ
 public interface NoticeService {
     /**
-     * Õ¹Ê¾ËùÓĞ¹«¸æ£¬ÕâÀïÕ¹Ê¾1-8Ìõ×îĞÂĞÂÎÅ
-     * @param s_notice
-     * @param pageBean
-     * @return
+     * å±•ç¤ºæ‰€æœ‰é€šçŸ¥å…¬å‘Šï¼Œ
      */
     public List<Notice> showNoticeList(Notice s_notice, PageBean pageBean);
+
     /**
-     * ¸ù¾İid ²é³ö¹«¸æÏêÇé
-     * @param noticeId
-     * @return
+     * æ ¹æ®id æŸ¥å‡ºé€šçŸ¥å…¬å‘Šè¯¦æƒ…
      */
     public Notice getNoticeById(int noticeId);
+
     /**
-     * ¼ÆËã×Ü¼ÇÂ¼Êı
-     * @param s_notice
-     * @return
+     * è®¡ç®—æ€»è®°å½•æ•°
      */
     public Long getNoticeCount(Notice s_notice);
+
+
+    /**
+     * è·å¾—æ•°æ®è¡¨æ ¼
+     */
+    public DataGrid datagrid(VoNotice voNotice);
+
+    /**
+     * åˆ é™¤
+     */
+    public void delete(String ids);
+
+    /**
+     * æ·»åŠ 
+     */
+    public void add(VoNotice voNotice);
+
+    /**
+     * è·å¾—é€šçŸ¥å…¬å‘Šä¿¡æ¯å†…å®¹
+     */
+    public String getContentById(int id);
+
+    public void update(VoNotice voNotice);
 }

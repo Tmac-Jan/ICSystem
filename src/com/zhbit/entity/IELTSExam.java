@@ -3,20 +3,26 @@ package com.zhbit.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by wby on 2018/4/6.
  */
-/*ÑÅË¼¿¼ÊÔ*/
+/*é›…æ€è€ƒè¯•*/
 @Entity
 @Table(name="tb_ielts_exam")
 public class IELTSExam {
     private int id;
-    private Date examTime;//ÑÅË¼¿¼ÊÔÊ±¼ä
-    private String examPlace;//ÑÅË¼¿¼ÊÔµØµã
-    private int score;//·ÖÊı
-    private IELTSTrain ieltsTrain;//ÅàÑµ»ú¹¹
+    private  String examId;//è€ƒè¯•çš„ç¼–å·
+    private Date examTime;//é›…æ€è€ƒè¯•æ—¶é—´
+    private String examPlace;//é›…æ€è€ƒè¯•åœ°ç‚¹
+    private String duration; //è€ƒè¯•æ—¶é•¿
+    private IELTSTrain ieltsTrain;//åŸ¹è®­æœºæ„
+    private  int sign;//0æ˜¯æ­£å¼è€ƒè¯•ï¼Œ1æ˜¯æ¨¡æ‹Ÿè€ƒè¯•
+
+    private List<InterStuExam> interStuExamList = new ArrayList<InterStuExam>();
 
     @Id
     @GeneratedValue(generator="_native")
@@ -32,6 +38,14 @@ public class IELTSExam {
     public Date getExamTime() {
         return examTime;
     }
+    @Column(length = 50,unique = true)
+    public String getExamId() {
+        return examId;
+    }
+
+    public void setExamId(String examId) {
+        this.examId = examId;
+    }
 
     public void setExamTime(Date examTime) {
         this.examTime = examTime;
@@ -44,14 +58,25 @@ public class IELTSExam {
     public void setExamPlace(String examPlace) {
         this.examPlace = examPlace;
     }
-
-    public int getScore() {
-        return score;
+    @Column(length=50)
+    public String getDuration() {
+        return duration;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
+
+    public int getSign() {
+        return sign;
+    }
+
+    public void setSign(int sign) {
+        this.sign = sign;
+    }
+
+
+
     @ManyToOne
     @JoinColumn(name="ieltsTrainId")
     public IELTSTrain getIeltsTrain() {
@@ -60,5 +85,14 @@ public class IELTSExam {
 
     public void setIeltsTrain(IELTSTrain ieltsTrain) {
         this.ieltsTrain = ieltsTrain;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "ieltsExam")
+    public List<InterStuExam> getInterStuExamList() {
+        return interStuExamList;
+    }
+
+    public void setInterStuExamList(List<InterStuExam> interStuExamList) {
+        this.interStuExamList = interStuExamList;
     }
 }

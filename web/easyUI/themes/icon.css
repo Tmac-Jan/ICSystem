@@ -1,0 +1,213 @@
+.icon-system{
+	background:url('icons/系统.png') no-repeat center center;
+}
+.icon-international{
+	background:url('icons/国际.png') no-repeat center center;
+}
+.icon-limit{
+	background:url('icons/权限.png') no-repeat center center;
+}
+.icon-auth{
+	background:url('icons/权限.png') no-repeat center center;
+}
+.icon-role{
+	background:url('icons/角色变更.png') no-repeat center center;
+}
+.icon-exchange{
+	background:url('icons/交换.png') no-repeat center center;
+}
+.icon-classInfo{
+	background:url('icons/专业.png') no-repeat center center;
+}
+.icon-user{
+	background:url('icons/用户.png') no-repeat center center;
+}
+.icon-publish{
+	background:url('icons/发布.png') no-repeat center center;
+}
+.icon-newsPub{
+	background:url('icons/新闻.png') no-repeat center center;
+}
+.table_left{
+	padding-left: 5px;
+	text-align: right;
+	background-color: #ddedfb;
+	font-size: 12px;
+	font-family:微软雅黑;
+	width: 120px;
+}
+.table_left+td{
+	padding: 5px;
+}
+.table_left+td>input{
+	height: 25px;
+	border: 1px solid silver;
+}
+.table_left+td>textarea{
+	border: 1px solid silver;
+}
+
+.icon-collegeInfo{
+	background:url('icons/学院.png') no-repeat center center;
+}
+.icon-themes{
+	background:url('icons/主题.png') no-repeat center center;
+}
+.icon-personalInfo{
+	background:url('icons/个人信息.png') no-repeat center center;
+}
+.icon-loginout{
+	background:url('icons/退出.png') no-repeat center center;
+}
+.icon-foreignCollege{
+	background:url('icons/国外院校.png') no-repeat center center;
+}
+.icon-university{
+	background:url('icons/大学.png') no-repeat center center;
+}
+.icon-summerCamp{
+	background:url('icons/活动.png') no-repeat center center;
+}
+.icon-agreement{
+	background:url('icons/协议.png') no-repeat center center;
+}
+.icon-chair{
+	background:url('icons/讲座.png') no-repeat center center;
+}
+.icon-policy{
+	background:url('icons/政策法规.png') no-repeat center center;
+}
+.icon-notice{
+	background:url('icons/通知.png') no-repeat center center;
+}
+.icon-exchangeInfo{
+	background:url('icons/交换生信息管理.png') no-repeat center center;
+}
+.icon-exchangeStudent{
+	background:url('icons/交换生.png') no-repeat center center;
+}
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons/增加.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons/修改.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('icons/clear.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons/删除.png') no-repeat center center;
+}
+.icon-overseaStudent{
+	background:url('icons/出国生管理.png') no-repeat center center;
+}
+.icon-overseaInfo{
+	background:url('icons/出国生信息管理.png') no-repeat center center;
+}
+.icon-loginLog{
+	background:url('icons/记录.png') no-repeat center center;
+}
+.icon-IpAdress{
+	background:url('icons/Ip定位.png') no-repeat center center;
+}
+.icon-ieltsTrain{
+	background:url('icons/雅思培训.png') no-repeat center center;
+}
+.icon-ieltsExam{
+	background:url('icons/雅思考试.png') no-repeat center center;
+}
+.icon-ieltsScore{
+	background:url('icons/雅思成绩.png') no-repeat center center;
+}
+.icon-ielts{
+	background:url('icons/雅思信息管理.png') no-repeat center center;
+}
+
+
+
+/*···················································································*/
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/取消选中.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+.icon-man{
+	background:url('icons/man.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('icons/lock.png') no-repeat center center;
+}
+.icon-more{
+	background:url('icons/more.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('icons/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('icons/large_clipart.png') no-repeat center center;
+}
+.icon-large-shapes{
+	background:url('icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('icons/large_chart.png') no-repeat center center;
+}
+

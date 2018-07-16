@@ -3,6 +3,8 @@ package com.zhbit.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by wby on 2018/4/6.
@@ -12,23 +14,35 @@ import javax.persistence.*;
 @Entity
 @Table(name="tb_international_student")
 public class InternationalStudent {
-    private int id;//学号
+    private int id;//学生标识号
+    private String stuId;//学号
     private String name;//姓名
     private String status;//状态
     private String major;//专业
     private ClassesInfo classInfo;//班级信息
-    private SummerCamp summerCamp;//夏令营活动
-    private OverSeasStudent overSeasStudent;//出国生
-    private ExchangeStudent exchangeStudent;//交换生
+    private OverSeasStudent overSeasStudent;//出国生  多对一
+    private ExchangeStudent exchangeStudent;//交换生  一对一
+    private User user; //一对一
+    private List<InterStuSummerCamp> interStuSummerCampList; // 夏令营活动 多对多的关系
+    private List<InterStuTrain> interStuTrainList = new ArrayList<InterStuTrain>(); //雅思培训中间表 多对多
+    private List<InterStuExam> interStuExamList = new ArrayList<InterStuExam>();//雅思考试中间表 多对多
     @Id
     @GeneratedValue(generator="_native")
     @GenericGenerator(name="_native",strategy="native")
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Column(length=30)
+    public String getStuId() {
+        return stuId;
+    }
+
+    public void setStuId(String stuId) {
+        this.stuId = stuId;
     }
 
     @Column(length=20)
@@ -67,15 +81,13 @@ public class InternationalStudent {
         this.classInfo = classInfo;
     }
 
-    /*国际生与夏令营活动多对一的配置*/
-    @ManyToOne
-    @JoinColumn(name="summerCampId")
-    public SummerCamp getSummerCamp() {
-        return summerCamp;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "internationalStudent")
+    public List<InterStuSummerCamp> getInterStuSummerCampList() {
+        return interStuSummerCampList;
     }
 
-    public void setSummerCamp(SummerCamp summerCamp) {
-        this.summerCamp = summerCamp;
+    public void setInterStuSummerCampList(List<InterStuSummerCamp> interStuSummerCampList) {
+        this.interStuSummerCampList = interStuSummerCampList;
     }
 
     /*国际生与出国生多对一的配置*/
@@ -97,5 +109,33 @@ public class InternationalStudent {
 
     public void setExchangeStudent(ExchangeStudent exchangeStudent) {
         this.exchangeStudent = exchangeStudent;
+    }
+
+    /*国际班学生与用户一对一的配置*/
+    @ManyToOne
+    @JoinColumn(name = "userId",unique = true)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User studentUser) {
+        this.user = studentUser;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "internationalStudent")
+    public List<InterStuTrain> getInterStuTrainList() {
+        return interStuTrainList;
+    }
+
+    public void setInterStuTrainList(List<InterStuTrain> interStuTrainList) {
+        this.interStuTrainList = interStuTrainList;
+    }
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "internationalStudent")
+    public List<InterStuExam> getInterStuExamList() {
+        return interStuExamList;
+    }
+
+    public void setInterStuExamList(List<InterStuExam> interStuExamList) {
+        this.interStuExamList = interStuExamList;
     }
 }

@@ -1,19 +1,19 @@
 package com.zhbit.service;
 
 import com.zhbit.entity.News;
-import com.zhbit.entity.PageBean;
-import com.zhbit.util.StringUtil;
+import com.zhbit.entity.base.DataGrid;
+import com.zhbit.entity.base.PageBean;
+import com.zhbit.entity.vo.VoNews;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by wby on 2018/5/28.
  */
-//ĞÂÎÅ
+//æ–°é—»
 public interface NewsService {
     /**
-     * Õ¹Ê¾ËùÓĞĞÂÎÅ£¬ÕâÀïÕ¹Ê¾1-8Ìõ×îĞÂĞÂÎÅ
+     * å±•ç¤ºæ‰€æœ‰æ–°é—»ï¼Œè¿™é‡Œå±•ç¤º1-8æ¡æœ€æ–°æ–°é—»
      * @param s_news
      * @param pageBean
      * @return
@@ -21,18 +21,49 @@ public interface NewsService {
     public List<News> showNewsList(News s_news, PageBean pageBean);
 
     /**
-     * ¸ù¾İid ²é³öĞÂÎÅÏêÇé
+     * æ ¹æ®id æŸ¥å‡ºæ–°é—»è¯¦æƒ…
      * @param newsId
      * @return
      */
     public News getNewsById(int newsId);
 
     /**
-     * ¼ÆËã×Ü¼ÇÂ¼Êı
+     * è®¡ç®—æ€»è®°å½•æ•°
      * @param s_news
      * @return
      */
     public Long getNewsCount(News s_news);
 
 
+//ä»¥ä¸‹æ–¹æ³•ç”±ç»„é•¿å¼ æ¶¦æ·»åŠ 
+    /**
+     * è·å¾—æ•°æ®è¡¨æ ¼
+     *
+     * @param voNews
+     * @return
+     */
+    public DataGrid datagrid(VoNews voNews);
+
+    /**
+     * åˆ é™¤
+     *
+     * @param ids
+     */
+    public void delete(String ids);
+
+    /**
+     * æ·»åŠ 
+     *
+     * @param voNews
+     */
+    public void add(VoNews voNews);
+
+    /**
+     * è·å¾—æ–°é—»å†…å®¹
+     * @param id
+     * @return
+     */
+    public String getContentById(int id);
+
+    public void update(VoNews voNews);
 }

@@ -2,9 +2,8 @@ package com.zhbit.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.zhbit.entity.News;
-import com.zhbit.entity.PageBean;
+import com.zhbit.entity.base.PageBean;
 import com.zhbit.service.NewsService;
-import com.zhbit.util.NavUtil;
 import com.zhbit.util.PageUtil;
 import com.zhbit.util.StringUtil;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -20,9 +19,9 @@ public class NewsAction extends ActionSupport implements ServletRequestAware {
     @Resource
     private NewsService newsService;
     private int newsId;
-    private News news;//Õ¹Ê¾Ê±ÓÃµ½¶ÔÏó
+    private News news;//å±•ç¤ºæ—¶ç”¨åˆ°å¯¹è±¡
     private String page;
-    private News s_news;//·ÖÒ³ÓÃµ½¶ÔÏó
+    private News s_news;//åˆ†é¡µç”¨åˆ°å¯¹è±¡
     private List<News> newsList;
     private Long total;
     private HttpServletRequest request;
@@ -71,11 +70,13 @@ public class NewsAction extends ActionSupport implements ServletRequestAware {
     public int getNewsId() {
         return newsId;
     }
+
     public void setNewsId(int newsId) {
         this.newsId = newsId;
     }
+
     /**
-     * Ç°Ì¨Ò³Ãæ·ÖÒ³Õ¹Ê¾
+     * å‰å°é¡µé¢åˆ†é¡µå±•ç¤º
      * @return
      * @throws Exception
      */
@@ -91,12 +92,13 @@ public class NewsAction extends ActionSupport implements ServletRequestAware {
         return super.execute();
     }
     /**
-     * Õ¹Ê¾ĞÂÎÅÏêÇé
+     * å±•ç¤ºæ–°é—»è¯¦æƒ…
      * @return
      */
     public String showNews(){
+        System.out.println("newsId"+newsId);
         news=newsService.getNewsById(newsId);
-        return "success";
+        return "shownews";
     }
 
     @Override

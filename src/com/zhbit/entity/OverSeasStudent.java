@@ -10,17 +10,18 @@ import java.util.List;
 /**
  * Created by wby on 2018/4/6.
  */
-//³ö¹úÉú
+//å‡ºå›½ç”Ÿ
 @Entity
 @Table(name="tb_overseas_student")
 public class OverSeasStudent {
     private int id;
-    private String schoolName;//³ö¹úµÄÑ§Ğ£
-    private String schoolType;//³ö¹úÀàĞÍ
-    private String replaceCourse;//Ìæ»»¿Î³Ì
-    private String replaceCredit;//Ìæ»»Ñ§·Ö
-    private Date goAbroadTime;//³ö¹úÊ±¼ä
-    private List <InternationalStudent> studentList = new ArrayList <InternationalStudent>();//³ö¹úÉúÓë¹ú¼Ê°àÑ§ÉúÒ»¶Ô¶à
+    private String overSeasName;//å‡ºå›½ç”Ÿçš„åç§°
+    private String schoolName;//å‡ºå›½çš„å­¦æ ¡
+    private String schoolType;//å‡ºå›½ç±»å‹
+    private String replaceCourse;//æ›¿æ¢è¯¾ç¨‹
+    private String replaceCredit;//æ›¿æ¢å­¦åˆ†
+    private Date goAbroadTime;//å‡ºå›½æ—¶é—´
+    private List <InternationalStudent> studentList = new ArrayList <InternationalStudent>();//å‡ºå›½ç”Ÿä¸å›½é™…ç­å­¦ç”Ÿä¸€å¯¹å¤š
 
     @Id
     @GeneratedValue(generator = "_native")
@@ -31,6 +32,15 @@ public class OverSeasStudent {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Column(length = 50)
+    public String getOverSeasName() {
+        return overSeasName;
+    }
+
+    public void setOverSeasName(String overSeasName) {
+        this.overSeasName = overSeasName;
     }
 
     @Column(length = 20)
@@ -77,9 +87,9 @@ public class OverSeasStudent {
         this.goAbroadTime = goAbroadTime;
     }
 
-    /* ³ö¹úÉúÓë¹ú¼Ê°àÑ§ÉúÒ»¶Ô¶à
-         *   targetEntity£º¶ÔÓ¦µÄÄ¿±êÊµÌåÀà(¹ú¼Ê°àÑ§Éú)
-         *   mappedBy£º¶ÔÓ¦µ½¶Ô·½µÄÊôĞÔ×Ö¶Î
+    /* å‡ºå›½ç”Ÿä¸å›½é™…ç­å­¦ç”Ÿä¸€å¯¹å¤š
+         *   targetEntityï¼šå¯¹åº”çš„ç›®æ ‡å®ä½“ç±»(å›½é™…ç­å­¦ç”Ÿ)
+         *   mappedByï¼šå¯¹åº”åˆ°å¯¹æ–¹çš„å±æ€§å­—æ®µ
         * */
     @OneToMany(mappedBy="overSeasStudent", targetEntity = InternationalStudent.class)
     public List <InternationalStudent> getStudentList() {

@@ -1,36 +1,53 @@
 package com.zhbit.service;
 
-import com.zhbit.entity.News;
-import com.zhbit.entity.Notice;
-import com.zhbit.entity.PageBean;
+import com.zhbit.entity.base.DataGrid;
+import com.zhbit.entity.base.PageBean;
 import com.zhbit.entity.Policy;
+import com.zhbit.entity.vo.VoPolicy;
 
 import java.util.List;
 
 /**
  * Created by wby on 2018/5/28.
+ * modified by wenxuan
  */
-//政策法规
+
 public interface PolicyService {
     /**
-     * 展示所有公告，这里展示1-8条最新公告
-     * @param s_policy
-     * @param pageBean
-     * @return
+     * 灞曠ず鎵�鏈夋斂绛栨硶瑙勪俊鎭紝
      */
-    public List<Policy>showPolicyList (Policy s_policy,PageBean pageBean);
+    public List<Policy> showPolicyList(Policy s_policy, PageBean pageBean);
 
     /**
-     * 根据id 查出政策法规详情
-     * @param policyId
-     * @return
+     * 鏍规嵁id 鏌ュ嚭鏀跨瓥娉曡淇℃伅璇︽儏
      */
-    public Policy getPolicyById(int policyId);
+    public Policy getPolicyById(int noticeId);
+
     /**
-     * 计算总记录数
-     * @param s_policy
-     * @return
+     * 璁＄畻鎬昏褰曟暟
      */
     public Long getPolicyCount(Policy s_policy);
 
+
+    /**
+     * 鑾峰緱鏁版嵁琛ㄦ牸
+     */
+    public DataGrid datagrid(VoPolicy voPolicy);
+
+    /**
+     * 鍒犻櫎
+     */
+    public void delete(String ids);
+
+    /**
+     * 娣诲姞
+     */
+    public void add(VoPolicy voPolicy);
+
+    /**
+     * 鑾峰緱鏀跨瓥娉曡淇℃伅鍐呭
+     */
+    public String getContentById(int id);
+
+    public void update(VoPolicy voPolicy);
 }
